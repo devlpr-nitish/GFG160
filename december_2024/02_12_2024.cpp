@@ -17,12 +17,13 @@ class Solution {
             if(pat[j] == txt[i]){
                 i++;
                 j++;
-            }
-            
-            if(j == m){
-                res.push_back(i - j);
-                j = lps[j-1];
-            }else if(pat[j]  != txt[i]){
+
+                // if pattern matched
+                if(j == m){
+                    res.push_back(i - j);
+                    j = lps[j-1];
+                }
+            }else{
                 if(j != 0){
                     j = lps[j-1];
                 }else{
